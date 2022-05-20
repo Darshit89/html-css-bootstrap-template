@@ -1,0 +1,416 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --blue: #264796;
+  --red: #e31e24;
+}
+body {
+  overflow-x: hidden;
+}
+/* ---------header-------- */
+
+header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 100;
+}
+header nav span i {
+  color: var(--blue);
+}
+header nav .menu {
+  list-style-type: none;
+}
+nav .menu li {
+  display: inline-block;
+  padding: 0 12px 8px 0;
+}
+nav .menu li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 650;
+  position: relative;
+  color: var(--red);
+}
+nav .menu li a::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: var(--blue);
+}
+
+nav .menu li:hover a,
+nav .menu li:active a {
+  color: var(--blue);
+}
+
+nav .menu li:hover a::after {
+  width: 100%;
+  transition: ease-in 0.5s;
+}
+
+.backgroud {
+  background-image: url("./images/bgimg.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-attachment: auto;
+  width: 100%;
+  height: 100vh;
+}
+
+.background_slogn {
+  color: white;
+  padding-top: 200px;
+}
+.background_slogn h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 45px;
+}
+.background_slogn h4 {
+  font-size: 3.3rem;
+  font-weight: 200;
+  line-height: 55px;
+}
+/* ---------product-------- */
+
+.product {
+  width: 100%;
+  height: auto;
+}
+/*heanding and underline */
+
+.product .product-heading,
+.services .services-heading,
+.client .client-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #464343;
+  padding: 80px 0;
+  position: relative;
+}
+.product .product-heading::after,
+.services .services-heading::after,
+.client .client-heading::after {
+  content: "";
+  display: block;
+  bottom: 30%;
+
+  width: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  position: absolute;
+  background-color: var(--red);
+  border-radius: 50px;
+}
+.product .product-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 25px;
+}
+.product .product-name h3 {
+  color: var(--blue);
+  font-weight: 600;
+}
+.product .product-name p,
+.doorinstall .install-info p {
+  color: rgba(20, 19, 19, 0.322);
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin: 25px 0;
+}
+.product .product-name a {
+  text-decoration: none;
+  color: var(--red);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.product .product-name a span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  vertical-align: sub;
+  margin-left: 50px;
+}
+
+/* ---------services-------- */
+.services {
+  width: 100%;
+  height: auto;
+}
+
+.services .our-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 33px 0;
+}
+
+.services .our-services p {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  font-weight: 700;
+  color: var(--blue);
+}
+/* ---------doorinstall-------- */
+
+.doorinstall {
+  width: 100%;
+  margin-top: 20px;
+  height: auto;
+  margin-bottom: 50px;
+}
+.doorinstall .install-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+}
+
+.doorinstall .install-info h2,
+.doorinstall .install-video .video-info h3 {
+  font-weight: 700;
+  line-height: 40px;
+}
+.doorinstall .install-info p {
+  margin: 25px 0;
+}
+.doorinstall .install-info .inspier-btn {
+  color: var(--blue);
+  background-color: transparent;
+  border-radius: 50px;
+
+  border: 0.8px solid rgba(0, 0, 0, 0.63);
+  padding: 7px 33px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+.doorinstall .install-video {
+  padding: 25px;
+}
+
+.doorinstall .install-video .video-info h3 {
+  margin: 25px 0;
+}
+.doorinstall .install-video .video-info p {
+  color: rgba(20, 19, 19, 0.322);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+/* ---------------aboutus---------------- */
+
+.aboutus {
+  background-color: #f4f4f4;
+  padding: 100px 0;
+}
+
+.aboutus .aboutus-heading {
+  font-size: 3rem;
+  padding: 50px 0;
+  color: #464343;
+  position: relative;
+}
+.aboutus .aboutus-heading::after {
+  content: "";
+  display: block;
+  bottom: 15%;
+  left: 0;
+  width: 200px;
+  height: 4px;
+  position: absolute;
+  background-color: var(--red);
+  border-radius: 50px;
+}
+.about {
+  padding: 0 50px 0 50px;
+}
+.aboutus .about .p1 {
+  color: rgba(20, 19, 19, 0.377);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.aboutus .about .p2 {
+  color: rgba(20, 19, 19, 0.404);
+  font-weight: 800;
+  line-height: 2;
+  font-size: 0.8rem;
+}
+.aboutus .about .read-btn {
+  color: var(--blue);
+  background-color: white;
+  border-radius: 50px;
+
+  border: none;
+  padding: 7px 33px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 35px;
+}
+/* ---------------review---------------- */
+
+.review .review-heading h1 {
+  font-size: 2.8rem;
+  padding: 50px 0;
+  color: #464343;
+}
+.review .review-heading h1 i {
+  color: var(--blue);
+}
+
+.navarrow {
+  text-align: right;
+  padding-right: 120px;
+  font-size: 2rem;
+}
+.navarrow span:first-child {
+  color: #4444;
+  margin-right: 15px;
+}
+.review .coustomer-review h4 {
+  color: var(--blue);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 40px;
+}
+.review .coustomer-review p {
+  color: rgba(20, 19, 19, 0.377);
+  font-weight: 600;
+  line-height: 25px;
+  font-size: 0.9rem;
+}
+.review .coustomer-review .coustomer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 25px;
+}
+.coustomer-review .coustomer-img {
+  background-color: pink;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+.coustomer-review .coustomer .coustomer-names p {
+  text-indent: 15px;
+  line-height: 10px;
+  vertical-align: bottom;
+}
+.coustomer-review .coustomer .coustomer-names p:first-child {
+  color: var(--red);
+  font-weight: 700;
+}
+.coustomer-review .coustomer .coustomer-names p:last-child {
+  color: var(--blue);
+  font-size: 0.7rem;
+}
+/* ---------------client---------------- */
+.client {
+  margin-bottom: 80px;
+}
+.client .mail {
+  text-align: center;
+}
+.client .mail h2 {
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.582);
+}
+.client .mail p {
+  color: rgba(20, 19, 19, 0.377);
+  font-weight: 600;
+
+  font-size: 0.9rem;
+}
+.client .mail form input {
+  width: 33%;
+  padding: 3px 10px;
+}
+.client .mail form span button {
+  padding: 6px 40px;
+  color: white;
+  background-color: #464343;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+/* -------footer------ */
+footer {
+  background-color: #464343;
+
+  color: white;
+}
+
+.address p {
+  font-size: 0.9rem;
+  line-height: 25px;
+}
+footer .support {
+  text-align: center;
+}
+footer .support ul {
+  list-style: none;
+}
+footer .support ul li {
+  margin-bottom: 40px;
+}
+footer .support ul li a,
+.contact a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.contact .mobile,
+.contact .email,
+.social-media {
+  display: flex;
+  margin: 35px 0;
+}
+
+.contact i {
+  display: block;
+  font-size: 30px;
+  margin-right: 10px;
+}
+::placeholder {
+  color: white;
+}
+.detail form {
+  background-color: #6b6969;
+  padding: 25px;
+  border-radius: 20px;
+}
+.detail input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  /* margin: px 0; */
+  padding: 18px;
+}
+
+.names {
+  width: 49%;
+}
+.send-btn {
+  margin: 30px 0 0 0;
+  color: white;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 8px;
+  background-color: var(--blue);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}

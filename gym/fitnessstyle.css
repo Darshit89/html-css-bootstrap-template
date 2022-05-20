@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+:root {
+  --orange: #ff9f1a;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+  /* here overflow-x use for hight extra space  */
+  overflow-x: hidden;
+  outline: none;
+  text-decoration: none;
+}
+*::selection {
+  background-color: var(--orange);
+  color: white;
+}
+html {
+  font-size: 62.5%;
+}
+
+/* ------------------------------header---------------------------- */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 2rem;
+}
+/* jquwry class for header change color when we scroll */
+.header-active {
+  background: white;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+.header-active .logo,
+.header-active .navbar a {
+  color: #333;
+}
+
+header .logo {
+  font-size: 3rem;
+  color: white;
+}
+header .logo span {
+  color: var(--orange);
+}
+/* ------------------------------navbar---------------------------- */
+
+header .navbar ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .navbar ul li {
+  margin: 0 1rem;
+  position: relative;
+}
+header .navbar ul li a {
+  color: white;
+  font-size: 2rem;
+}
+header .navbar ul li a::before {
+  content: " ";
+  width: 0;
+  height: 5px;
+
+  background-color: orange;
+  position: absolute;
+  top: 0;
+  transition: all ease-out 1s;
+}
+
+header .navbar ul li .active,
+header .navbar ul li a:hover {
+  color: var(--orange);
+}
+header .navbar ul li a:hover::before {
+  width: 100%;
+}
+header #menu {
+  font-size: 3rem;
+  color: var(--orange);
+  cursor: pointer;
+  display: none;
+}
+/* ------------------------------home---------------------------- */
+
+.home {
+  min-height: 100vh;
+
+  background-image: url(/images/home.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  /* clip path use for give image design like circle and polygon etc..  */
+  clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 50% 100%, 0 80%, 0 0);
+}
+.home h1 {
+  font-size: 6rem;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+  text-transform: uppercase;
+}
+/* ------------------------------about and img---------------------------- */
+
+.about .row {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8rem;
+  flex-wrap: wrap;
+}
+.row .image {
+  flex: 1 40rem;
+  padding: 2rem;
+}
+.row .image img {
+  width: 100%;
+  height: 100%;
+}
+.row .content {
+  flex: 1 40rem;
+  padding: 2rem;
+}
+.row .content h3 {
+  color: #333;
+  font-size: 3rem;
+}
+.row .content p {
+  color: #666;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+}
+.content a {
+  text-decoration: none;
+}
+
+/* ------------------------------service---------------------------- */
+
+.service {
+  min-height: 100vh;
+  text-align: center;
+}
+.heading {
+  display: inline-block;
+  color: #333;
+  margin: 1rem 0;
+  padding-top: 8rem;
+  font-size: 3rem;
+  border-bottom: 0.2rem solid var(--orange);
+}
+/* ------------------------------box and img ..---------------------------- */
+
+.service .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.service .box-container .box {
+  width: 40rem;
+  height: 35rem;
+  margin: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.service .box-container .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.service .box-container .box .info {
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  /* here we use transform bcz adjusment text into center */
+  top: 50%;
+  left: 50%;
+  /* translate use for move content and scale multiplie widh and height here scale o means content hide */
+  transform: translate(-50%, -50%) scale(0);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+.service .box-container .box:hover .info {
+  /* here scale 1 means content visible on hover */
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.8;
+}
+.service .box-container .box .info h3 {
+  font-size: 2.5rem;
+  color: black;
+}
+.service .box-container .box .info p {
+  font-size: 1.2rem;
+  color: rgb(71, 64, 64);
+  padding: 1rem 2rem;
+}
+/* ------------------------------trainer---------------------------- */
+
+.trainer {
+  min-height: 100vh;
+  text-align: center;
+  background: #333;
+}
+
+/* ------------------------------box and img ..---------------------------- */
+
+.trainer .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.trainer .heading {
+  color: white;
+}
+.trainer .box-container .box {
+  width: 27rem;
+  height: 40rem;
+  margin: 1.5rem;
+  border: 0.5rem solid var(--orange);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0.3rem 0.5rem #000;
+}
+.trainer .box-container .box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.trainer .box-container .box .info {
+  color: #333;
+  background: white;
+  border: 0.5rem solid var(--orange);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 2rem;
+  width: 100%;
+  padding: 1rem 0;
+}
+/* apear on hover style  */
+.trainer .box-container .box .share {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  display: flex;
+  flex-flow: column;
+}
+.trainer .box-container .box .share a {
+  height: 4rem;
+  width: 4.5rem;
+  font-size: 2rem;
+  line-height: 4rem;
+  columns: #333;
+  background: white;
+  margin: 0.5rem 1rem;
+}
+.trainer .box-container .box .share {
+  top: -100rem;
+}
+
+.trainer .box-container .box:hover .share {
+  top: 0rem;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.trainer .box-container .box .share a:hover {
+  background-color: var(--orange);
+}
+
+/* ------------------------------plan---------------------------- */
+.plan {
+  min-height: 100vh;
+  text-align: center;
+  background-color: #eee;
+}
+
+.plan .heading {
+  color: #333;
+}
+
+.plan .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.plan .box-container .box {
+  width: 30rem;
+  background-color: #fff;
+  margin: 2rem;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+.plan .box-container .box .title {
+  font-size: 2.5rem;
+  background-color: var(--orange);
+  color: white;
+  padding: 1rem 0;
+}
+.plan .box-container .box .price {
+  font-size: 4rem;
+  color: #333;
+  padding-top: 1rem;
+}
+.plan .box-container .box .price span {
+  font-size: 2rem;
+  color: rgb(15, 15, 15);
+  padding-top: 1rem;
+}
+.plan .box-container .box .month {
+  font-size: 2rem;
+  color: #666;
+}
+.plan .box-container .box ul {
+  list-style: none;
+  margin: 2rem 8rem;
+}
+.plan .box-container .box ul li {
+  text-align: left;
+  padding: 0.5rem 0;
+  color: #666;
+}
+.plan .box-container .box ul li i {
+  color: var(--orange);
+  padding: 0 0.5rem;
+}
+.plan .box-container .box .btn {
+  margin-bottom: 3rem;
+}
+
+/* ------------------------------register---------------------------- */
+
+.register {
+  min-height: 85vh;
+  text-align: center;
+  background-color: #000;
+  padding-bottom: 3rem;
+}
+.register .heading {
+  color: #fff;
+}
+.register form {
+  width: 75%;
+  margin: auto;
+}
+.register form .inputbox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.register form .inputbox input,
+textarea {
+  height: 4rem;
+  width: 49%;
+  background: #111;
+  color: #fff;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  font-size: 2rem;
+  border: none;
+}
+.register form .inputbox input:focus,
+textarea:focus {
+  background: rgb(56, 56, 56);
+}
+.register form textarea {
+  height: 20rem;
+  resize: none;
+  padding: 1rem;
+  width: 100%;
+}
+.register .btn {
+  background-color: var(--orange);
+}
+
+/* ------------------------------footer---------------------------- */
+
+footer {
+  color: #eee;
+  background: #444;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+}
+footer a {
+  color: orange;
+}
+
+footer a:hover {
+  color: white;
+}
+/* ------------------------------button---------------------------- */
+
+.btn {
+  cursor: pointer;
+  border: 0.2rem solid var(--orange);
+  background: none;
+  padding: 0.5rem 0.3rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
+  font-size: 2rem;
+  color: white;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+
+  background-color: var(--orange);
+}
+.btn:hover::before {
+  animation: text-focus-in 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/* ------------------------------media queries---------------------------- */
+
+@media (max-width: 768px) {
+  body {
+    min-width: 250px;
+  }
+  html {
+    font-size: 55%;
+  }
+
+  header #menu {
+    display: block;
+  }
+
+  header .navbar {
+    position: fixed;
+    top: -100rem;
+    opacity: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+  }
+  header .navbar ul {
+    flex-flow: column;
+    padding: 2rem 0;
+  }
+  header .navbar ul li {
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+  header .navbar ul li a {
+    font-size: 2.5rem;
+    color: rgb(77, 73, 73);
+    display: block;
+  }
+  /* jqueryclass  for hamburger menu bar for mobile devices we right in media queries bcz this for mobile*/
+  header .navbar.nav-toggle {
+    top: 8rem;
+    opacity: 1;
+  }
+
+  .register form {
+    width: 90%;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  .home h1 {
+    font-size: 5rem;
+  }
+
+  .register form .inputbox input {
+    width: 100%;
+  }
+}

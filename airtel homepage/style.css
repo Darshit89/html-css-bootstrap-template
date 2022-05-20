@@ -1,0 +1,886 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  /* overflow-x: auto; */
+}
+
+html {
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+:root {
+  --red: #ec0f0f;
+  --grey: #e7e8e9;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* -------------------------------headnav--------------------------- */
+.headnav {
+  height: 24px;
+}
+
+.headnav ul li {
+  font-size: 10px;
+  margin: 0 9px;
+}
+
+.headnav ul li a {
+  text-decoration: none;
+  color: rgb(66, 66, 66);
+}
+
+.headnav ul li a:hover {
+  color: black;
+  font-weight: 800;
+}
+
+/* -------------------------------main navbar--------------------------- */
+
+.mainnav ul .nav-item > a {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.mainnav ul .nav-item:hover > a {
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--red);
+}
+
+.dropdown-menu {
+  margin-top: 20px;
+}
+
+/* ---------------click button chage on hover-------- */
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown > #navbarDropdownMenuLink:active {
+  /*Without this, clicking will make it sticky*/
+  pointer-events: none;
+}
+
+/* --------------jquery ------------ */
+.nav-item.round a span {
+  transform: rotate(180deg);
+}
+
+.mainnav .nav-item.round > a {
+  color: var(--red) !important;
+}
+
+.dropdown-menu li a {
+  width: 100% !important;
+  margin-bottom: 20px;
+}
+
+.mainnav.fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* -------------------------------sub_nav--------------------------- */
+.sub_nav a {
+  font-size: 14px;
+}
+
+.sub_nav p {
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* -------------------------------------slider------------------- */
+
+.prev {
+  transform: rotate(180deg);
+  z-index: 1;
+}
+
+.prev::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.next::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -------------------------------------plan------------------- */
+.plan h1 {
+  color: white;
+  font: 24px;
+}
+
+.recharge {
+  background-image: linear-gradient(100deg, #b00, #8d0000),
+    linear-gradient(100deg, #8aaebb, #89adba);
+  box-shadow: 0 4px 9px 0 hsl(0deg 0% 84% / 50);
+  padding: 30px 0;
+}
+
+.plannav ul {
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  padding: 5px 5px 8px 5px;
+  text-align: center;
+}
+
+.plannav ul li {
+  width: 124px;
+  height: 38px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.plannav ul li a {
+  padding: 11px 0;
+  color: black !important;
+}
+
+.plannav ul li:hover a {
+  background-color: white;
+  border-radius: 3px;
+  color: black;
+}
+
+/* -----------------reacharge--------------------- */
+.recharge .title {
+  text-align: right;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.subtitle {
+  text-align: right;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.mo_no {
+  border-top-right-radius: 5px !important;
+  border-bottom-right-radius: 5px !important;
+}
+
+#btn {
+  border-radius: 5px;
+
+  text-align: center;
+  background-color: white;
+
+  font-weight: 700;
+  padding: 3px 12px;
+  margin-left: 30px;
+}
+
+/* -----------------------------------------experince-------------------- */
+.experince {
+  background-color: var(--grey);
+}
+
+.experince .title {
+  margin: 0 0 30px 0;
+
+  font-weight: 600;
+  line-height: 1.47;
+  color: #000;
+  font-size: 34px;
+}
+
+.box {
+  padding: 18px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 9px 0 hsl(0deg 0% 84% / 50%);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.1s linear;
+}
+
+.box p {
+  font-size: 16px;
+}
+
+.box:hover {
+  transform: scale(1);
+}
+
+.btn {
+  background-color: white;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.show {
+  display: none;
+}
+
+/* ----------------------postpaid---------------------- */
+.postpaid {
+}
+.postpaid_plan {
+  overflow-x: scroll;
+}
+
+.postpaid .image {
+  background-image: url(/images/airtel-postpaid.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+}
+
+.postpaid .title {
+  width: 100%;
+  position: relative;
+  margin: 0 0 40px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.09;
+  color: #000;
+}
+
+.postpaid .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 30px;
+  border-bottom: 4px solid var(--red);
+  border-radius: 2px;
+}
+
+.postpaid .heading {
+  width: 100%;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.47;
+  color: #000;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.postpaid .heading span {
+  color: var(--red);
+}
+
+.postpaid .subheading {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #393939;
+  margin: 0 0 40px;
+  padding: 0;
+}
+
+.postpaid .sec_heading p {
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #696969;
+}
+
+.postpaid .sec_subheading p {
+  margin: 0 0 20px;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.33;
+  color: #393939;
+}
+
+.postpaid .price {
+  list-style: none;
+  display: flex;
+}
+
+.postpaid .price .boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 120px;
+  margin: 0 20px 50px 0;
+  padding: 18px;
+  border-radius: 4px;
+  box-shadow: 0 0 9px 0 hsl(0deg 0% 84% / 50%);
+  background-color: #fff;
+  text-align: center;
+  transform: scale(1);
+  transition: transform 0.1s linear;
+}
+
+.postpaid .price .boxes p {
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 10px;
+  font-size: 12px;
+  color: #696969;
+}
+
+.postpaid .price .boxes h1 {
+  margin: 0 0 17px;
+  font-size: 34px;
+  line-height: 0.79;
+  color: #393939;
+
+  font-weight: 600;
+  text-align: center;
+}
+
+.postpaid .price .boxes a {
+  font-size: 18px;
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* -----------------------------port---------------------------------------------- */
+.port,
+.talk,
+.greet {
+  background-image: linear-gradient(100deg, #b00, #8d0000),
+    linear-gradient(100deg, #8aaebb, #89adba);
+  position: relative;
+}
+
+.port::before,
+.talk::before,
+.greet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(https://assets.airtel.in/static-assets/new-home/img/white-pattern.svg);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.port .images2 img {
+  margin: 25px 0;
+  min-width: 200px;
+  min-height: 300px;
+  border: 15px solid #fff;
+  background-color: #eee;
+  overflow: hidden;
+}
+
+.port .port_title {
+  padding: 95px 0 0 0;
+}
+
+.port .port_title,
+.talk .talk_title {
+  margin: 40px 0 0 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.09;
+  color: #000;
+
+  position: relative;
+  color: #fff;
+}
+
+.port .port_title::before,
+.talk .talk_title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 30px;
+  border-bottom: 4px solid #fff;
+  border-radius: 2px;
+}
+
+.port .port_subtitle h4,
+.talk .talk_subtitle h4 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.47;
+  color: #fff;
+
+  margin: 0 0 20px;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+}
+
+.port .port_subtitle a,
+.talk .talk_subtitle a,
+.wynk .wynk_subtitle a {
+  background-color: white;
+  color: var(--red);
+  border-radius: 4px;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  outline: none;
+
+  transform: scale(1);
+  transition: transform 0.1s linear, background-color 0.25s linear,
+    color 0.25s linear;
+  cursor: pointer;
+}
+
+.port .port_subtitle a:hover,
+.talk .talk_subtitle a:hover,
+.wynk .wynk_subtitle a:hover {
+  background-color: var(--red);
+  color: white;
+}
+
+/* ----------------------------------xstream----------------------------- */
+.xstream {
+  margin: 40px 0 0 0;
+}
+
+.xstream_title {
+  box-shadow: 0 5px 4px 0 rgb(0 0 0 / 8%);
+}
+
+.xstream_title h4 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.09;
+  text-align: center;
+  color: #393939;
+}
+
+.xstream-boxes {
+  display: flex;
+  margin-top: -84px;
+  padding-bottom: 90px;
+}
+
+.xstream_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 170px;
+  flex: 1 1;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%);
+  background-color: #fff;
+  margin-right: 15px;
+}
+
+.xstream_box p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.xstream_box img {
+  height: 90px;
+}
+
+.xstream_box .btn {
+  outline: none;
+  width: 90%;
+  background-color: #e40001;
+  display: flex;
+  color: #fff;
+  border-radius: 4px;
+  margin: 5px 0 0 0;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.xstream_box .btn:hover {
+  background-color: #393939;
+}
+
+/* -------------------------talk--------------------------------talk css combine with port */
+.talk {
+  padding: 20px 0 0 0;
+}
+
+.talk_subtitle p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.talk .talk_subtitle h4 {
+  margin-bottom: 10px;
+}
+
+.talk p.no-iuc {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 3.2;
+  color: #fff;
+}
+
+/* --------------------------------------wynk--------------------------- */
+.wynk {
+  background-image: linear-gradient(105deg, #e9e2d0, #e9e2d0 99%);
+}
+
+.wynk .images2 {
+  margin: 110px 0;
+  /* overflow-x: auto; */
+}
+.wynk .images2 img {
+}
+
+.wynk2 {
+  margin: 110px 0;
+}
+
+.wynk_title {
+  margin: 0 0 40px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.09;
+  color: #393939;
+  position: relative;
+}
+
+.wynk_title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 30px;
+  border-bottom: 4px solid var(--red);
+  border-radius: 2px;
+}
+
+.wynk_subtitle h4 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.47;
+
+  margin: 0 0 5px;
+}
+
+.wynk_subtitle p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.28;
+  margin: 0 0 20px;
+}
+
+/* ---------------------------------------greet---------------------------- */
+.greet .images2 {
+  padding: 90px 0 60px 0;
+  text-align: center;
+}
+
+.greet .thank {
+  padding: 100px 0 60px 0;
+}
+
+.greet .thank .exp {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 16px 0;
+  color: #fff;
+}
+
+.greet .thank h4 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.38;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.greet .thank p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.greet .thank .btn-box {
+  display: flex;
+  transform: scale(1);
+  transition: transform 0.1s linear;
+}
+
+.greet .thank .btn-box a:hover {
+  transform: scale(1.05);
+}
+
+/* --------------------footer------------------------- */
+#plus {
+  border: none;
+  color: black;
+}
+
+/* ----------------------media query--------------- */
+@media screen and (min-width: 700px) {
+  .carousel-item {
+    min-height: 300px !important;
+  }
+
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-indicators {
+    display: none;
+  }
+  .wynk .images2 {
+    margin: 110px 0;
+    overflow-x: auto;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .recharge {
+    background: transparent;
+    box-shadow: 0 4px 9px 0 hsl(0deg 0% 84% / 50);
+    padding: 30px 0;
+  }
+
+  .recharge .title {
+    color: black;
+    text-align: center;
+  }
+
+  .recharge .title::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--red);
+  }
+
+  .plannav ul {
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px 5px 8px 5px;
+    text-align: center;
+  }
+
+  .red {
+    background: var(--red);
+  }
+
+  .mo_no {
+    border-radius: 0 !important;
+  }
+
+  #btn {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* -------------------------------for all button--------------------------------- */
+  .btn {
+    background-color: #e40000;
+    color: white;
+    padding: 10px 12px;
+  }
+
+  /* -------------------------------------experinece------------ */
+  .experince {
+    background-color: white;
+  }
+
+  #moreinfo {
+    display: none;
+  }
+
+  #moreinfo.visible {
+    display: block;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .experince .title::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    display: block;
+
+    background-color: var(--red);
+  }
+
+  .box {
+    background-color: #fff;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .wynk .images2 {
+    margin: 10px 0;
+  }
+
+  .wynk2 {
+    margin: 10px 0;
+  }
+}
+/* ----------------footer---------------- */
+footer {
+  padding: 80px 16px;
+}
+footer .footernav {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+}
+footer .navname {
+  color: #444;
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: capitalize;
+  pointer-events: none;
+}
+footer .navplus {
+  display: none;
+}
+footer .footernavlink {
+  list-style: none;
+  left: 0;
+  padding: 0;
+}
+footer .footernavlink li {
+  padding: 6px 0;
+  white-space: nowrap;
+}
+footer .footernavlink li a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #393939;
+}
+.backtop {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  letter-spacing: 2.5px;
+  outline: none;
+  color: #e40000;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+.backtop span {
+  font-size: 25px;
+}
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.social li:first-child {
+  margin-left: 0;
+}
+.social li {
+  margin-left: 25px;
+}
+.social a {
+  text-decoration: none;
+  font-size: 40px;
+  color: #393939dc;
+}
+.devider {
+  border-bottom: 2px solid #eee;
+}
+.companyinfo {
+  padding-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
+}
+.companyinfo a,
+.companyinfo p {
+  text-decoration: none;
+  color: #393939;
+  font-size: 15px;
+  padding: 3px;
+}
+@media screen and (max-width: 995px) {
+  .navname {
+    padding: 16px 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  footer .navplus {
+    display: block;
+    padding: 16px 20px;
+    color: #444;
+    font-size: 28px;
+    text-align: right;
+    font-weight: 100;
+  }
+  footer .footernavlink li a {
+    font-size: 18px;
+    color: #e40000;
+  }
+  footer .footernavlink {
+    display: none;
+  }
+  footer .footernavlink.apeear {
+    display: block;
+  }
+  .social {
+    justify-content: center;
+  }
+  .companyinfo {
+    flex-direction: column;
+  }
+}
